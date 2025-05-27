@@ -1,4 +1,4 @@
-# Kamkar4 - s
+# Kamkar4
 
 <p align="center">
   <img style="width:40%" src="./assets/Kamkar.png" />
