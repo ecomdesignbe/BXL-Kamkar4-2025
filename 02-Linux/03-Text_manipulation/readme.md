@@ -505,34 +505,49 @@ satvik 80000
 ## Exercises 
 
 1. Search all sequences containing "Loxondota" in ``/home/student/lorem.txt``
-    > Flag :
+    > Your commands : grep 'Loxondota' /home/student/lorem.txt
+    > Flag : BC{GREP_ME_LOREM_FL4G} 
+
 2. Copy the file /etc/passwd to your home directory. Display the line starting with ``student`` name.
-    > Your commands :
+    > Your commands : cp /etc/passwd ~/ 
+                      grep '^student' ~/passwd
+
 3. Display the lines in the passwd file starting with login names of 3 or 4 characters.
-    > Your commands :
+    > Your commands : grep '^[a-zA-Z0-9]\{3,4\}:' /etc/passwd
+
 4. In the file ``/home/student/sample.txt`` how many different values are there in the first column? in the second?
-    > Your response :  
-    > Your command :
+    > Your response : 8 // 8  
+    > Your command : cut -d' ' -f1 /home/student/sample.txt | sort | uniq | wc -l
+                     cut -d' ' -f2 /home/student/sample.txt | sort | uniq | wc -l
+
 5. In the file ``/home/student/sample.txt`` sort the values in the second column by frequency of occurrence. (uniq -c can be useful)
-    > Your response :  
-    > Your command :
+    > Your response : to test
+    > Your command : cut -d' ' -f2 /home/student/sample.txt | sort | uniq -c | sort -nr
+
 6. In the file ``/home/student/iris.data`` Change the column separator (comma) to tab (make sure that the changes are applied to the file)
-    > Your response :  
-    > Your command :
+    > Your response : to test
+    > Your command : sed -i 's/,/\t/g' /home/student/iris.data
+
 7. In the file ``/home/student/iris.data``, extract from this file the column 3 (petal length in cm) (use cut )
-    > Your response :  
-    > Your command :
+    > Your response : to test 
+    > Your command : cut -f3 /home/student/iris.data
+
 8. In the file ``/home/student/iris.data``, count the number of flower species (cut and uniq)
-    > Your response :  
-    > Your command :
+    > Your response : 4
+    > Your command : cut -f5 /home/student/iris.data | sort | uniq | wc -l
+
 9. In the file ``/home/student/iris.data``, sort by increasing petal length (see sort options)
-    > Your response :  
-    > Your command :
+    > Your response : to test 
+    > Your command : sort -k3,3n /home/student/iris.data
+
 10. In the file ``/home/student/iris.data``, show only lines with petal length greater than the average size
-    > Your response :  
-    > Your command :
+    > Your response :  3.86468
+    > Your command : awk -F'\t' '{sum+=$3; count++} END {avg=sum/count; print avg}' /home/student/iris.data
+                     # Suppose the average is X (replace with real number)
+                     awk -F'\t' -v avg=X '$3 > avg' /home/student/iris.data
+
 11. Using ``/etc/passwd``, extract the user and home directory fields for all users on your student
 machine for which the shell is set to ``/bin/false``. 
-    > Your response :
-    > Your command
+    > Your response : to test
+    > Your command : awk -F: '$7 == "/bin/false" {print $1, $6}' /etc/passwd
 
