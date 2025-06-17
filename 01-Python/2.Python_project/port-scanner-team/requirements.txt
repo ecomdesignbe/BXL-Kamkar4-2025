@@ -1,2 +1,0 @@
-pip install validators
-pip install python-nmap
