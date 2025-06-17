@@ -37,34 +37,34 @@ First, please follow this
     > No answer required
 
 2. What other well-known service could be used instead of nginx? 
-    > Your answer :
+    > Your answer : Apache HTTP Server (httpd)
 
 3. On your student machine, create a temporary http server with python, on port ``5000``. Then on your kali machine, open a browser and go to the address ``10.xx.1.xx:``.
-    > Your command : 
+    > Your command : python3 -m http.server 5000
 
 4. Let's imagine that a hacker owns the domain name ``g00gle.com``, which tool would allow him to obtain an ssl certificate (https) very easily?
-    > Your answer :
+    > Your answer : Let’s Encrypt (via tools like Certbot) — as long as domain ownership is verifiable.
 
 5. On a linux machine, what tool could you use to have a self-signed SSL certificate on your local machine (localhost) ? 
-    > Your answer : 
+    > Your answer : openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes
 
 6. On your student machine, install the ftp service and connect from your kali machine.
     > No answer required
 
 7. What is the default port for ftp? 
-    > Your answer :
+    > Your answer : Port 21
 
 8. Is the ftp protocol secured?
-    > Your answer :
+    > Your answer : No, FTP transmits data in plaintext. Use FTPS or SFTP for secure alternatives.
 
 9. On your student machine, install the telnet service and connect from your kali machine.
     > No answer required
 
 10. What is the default port for telnet? 
-    > Your answer :
+    > Your answer : Port 23
 
 11. Is the telnet protocol secured?
-    > Your anbswer :
+    > Your anbswer : No, Telnet is not secure — it transmits credentials and data in plaintext. Use SSH instead.
     
 12. Create a share file with samba between your Kali machine and your student machine.
     > No answer required

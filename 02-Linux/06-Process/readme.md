@@ -206,16 +206,16 @@ fg 4
 ### Exercises :
 
 1. List all running processes in Linux.
-> Your answer
+> ps aux or top or htop (if installed)
 
 2. How do you find the PID of a process by its name?
-> Your answer
+> pidof <process_name> or pgrep <process_name> or ps aux | grep <process_name>
 
 3. Terminate a process with a specific PID.
-> Your answer
+> kill <PID> (use kill -9 <PID> to force termination if needed)
 
 4. Change the priority of a running process.
-> Your answer
+> Use renice: renice <new_priority> -p <PID> Example: renice 10 -p 1234 (Lower values mean higher priority; -20 is highest, 19 is lowest)
 
 5. How can you continuously monitor the resource usage of a specific process?
-> Your answer
+> top -p <PID> or htop and search/filter for the PID or watch -n 1 "ps -p <PID> -o %cpu,%mem,cmd"
