@@ -118,10 +118,10 @@ We use shell variables (without export ) when we want the variables to be availa
 ### Exercises 
 
 1. On your student machine what is the value of the FLAG environment variable ?
-> FLAG : 
+> FLAG : empty --> echo $FLAG
 
 2. Currently if you notice your machine, the variable you have created will be deleted. What should you do to make your variable persistent? (With a Bash shell).
-> Commands :
+> Commands : export FLAG="THIS_IS_MY_FLAG"
 
 
 ## History
@@ -201,9 +201,12 @@ You just have to enter the first characters of the command you want to search fo
 ### Exercises :
 
 1. **From a hacker's perspective**, look for information that might be useful to you in the ``.history`` file. 
-> Your answer
+> Your answer : Administrative actions: Commands such as sudo, chmod, chown, or package installations may suggest privilege escalation possibilities.
+
 2. **From an analyst's perspective**, look for information that might be useful to you in the ``.history`` file. 
-> Your answer
+> Your answer : Misuse of privileges: Frequent use of sudo, unexpected use of chmod 777, or access to /etc/shadow could indicate privilege abuse.
+
+
 
 ## Custom aliases 
 Linux users often need to use one command over and over again. Typing or copying the same command again and again reduces your productivity and distracts you from what you are actually doing.
