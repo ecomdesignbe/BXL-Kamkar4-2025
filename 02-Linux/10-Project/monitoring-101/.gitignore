@@ -1,0 +1,13 @@
+alerts/
+backup/
+log/
+
+logs/alerts.log
+logs/hids.logs
+logs/network.logs
+logs/user.logs
+scripts/.bash.hash
+scripts/.open_ports.txt
+scripts/.shadow.hash
+scripts/.passwd.hash
+scripts/.user_list.txt
