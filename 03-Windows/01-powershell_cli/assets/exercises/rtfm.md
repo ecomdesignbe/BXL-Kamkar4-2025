@@ -14,94 +14,103 @@ Optionally:
 
 ---
 
-## 🔹 Étape 1 : Ouvrir une session PowerShell
+# 💻 PowerShell RTFM – Answers
 
-Lance PowerShell (ou Windows Terminal avec un onglet PowerShell).
+## ✅ Open a PowerShell session in your terminal
+
+✅ Done: Opened PowerShell via the Start menu or through Windows Terminal.
 
 ---
 
-## 🔹 Étape 2 : Taper `Get-Help`
+## ✅ Type `Get-Help`
 
 ```powershell
 Get-Help
 ```
 
-Affiche les options générales d’aide disponibles dans PowerShell :
-- `-Full`
-- `-Detailed`
-- `-Examples`
-- `-Online`
+📘 This command displays a guide on how to use the help system in PowerShell. It shows that you can use parameters like:
+- `-Name`: get help on a specific command
+- `-Examples`: see practical usage examples
+- `-Detailed`: show a detailed description
+- `-Online`: open the official documentation in your browser
 
 ---
 
-## 🔹 Étape 3 : Découvrir ce que fait `Get-Process`
+## ✅ Find out what a command such as `Get-Process` does **without using Google**
 
 ```powershell
 Get-Help Get-Process
 ```
 
-> Gets the processes that are running on the local computer or on a remote computer.
+📄 **Output**:  
+`Get-Process` gets the processes that are currently running on the local computer or a remote one if specified.
 
-🔍 Autres options utiles :
+> "Gets the processes that are running on the local computer or on a remote computer."
+
+🔎 For more detailed info:
 
 ```powershell
-Get-Help Get-Process -Detailed
 Get-Help Get-Process -Examples
 ```
 
 ---
 
-## 🔹 Étape 4 : Utiliser l’aide en ligne
+## ✅ Try with the `-Online` parameter
 
 ```powershell
 Get-Help Get-Process -Online
 ```
 
-Cela ouvrira la documentation officielle dans ton navigateur.
+🌐 This opens the official Microsoft documentation for `Get-Process` in your default browser.
 
 ---
 
-## 🔹 Étape 5 : Tester `Get-Command`
+## ✅ What does `Get-Command` do?
 
 ```powershell
 Get-Command
 ```
 
-Permet de lister toutes les commandes disponibles.
+🔧 This command lists **all available PowerShell commands** in your current session.
 
-Exemples :
+You can filter it with:
+- `-Name` to search by name
+- `-Verb` or `-Noun` for more specific queries
+- Wildcards like `Get-*` to narrow down the list
+
+Example:
 
 ```powershell
-Get-Command Get-*
 Get-Command -Name *process*
 ```
 
----
-
-## 🔹 Étape 6 (Optionnel) : Aide sur les commandes classiques (ls, cp, mv…)
-
-| Commande Linux | Alias PowerShell | Cmdlet équivalente         |
-|----------------|------------------|-----------------------------|
-| `ls`           | `ls`             | `Get-ChildItem`             |
-| `cp`           | `cp`             | `Copy-Item`                 |
-| `mv`           | `mv`             | `Move-Item`                 |
-| `rm`           | `rm`             | `Remove-Item`               |
-| `cat`          | `cat`            | `Get-Content`               |
-
-Tu peux tester :
-
-```powershell
-Get-Help ls
-Get-Help Get-ChildItem -Examples
-```
+👉 Lists all commands related to processes.
 
 ---
 
-## ✅ Résumé des commandes utiles
+## 🔹 Optionally: Try to get help on common commands like `ls`, `cp`, `mv`, ...
+
+You can get help for commonly used aliases (often from Linux):
 
 ```powershell
-Get-Help <cmdlet> -Examples      # Voir des exemples
-Get-Help <cmdlet> -Detailed      # Description détaillée
-Get-Help <cmdlet> -Online        # Documentation officielle
-Get-Command <mot-clé>            # Chercher une commande
+Get-Help ls     # Get-ChildItem
+Get-Help cp     # Copy-Item
+Get-Help mv     # Move-Item
+Get-Help rm     # Remove-Item
+Get-Help cat    # Get-Content
 ```
+
+💡 PowerShell uses aliases to make the transition from bash easier.
+
+---
+
+## ✅ Quick Summary
+
+| Command           | Function                                   |
+|-------------------|--------------------------------------------|
+| `Get-Help`        | Get general or specific help               |
+| `Get-Process`     | List currently running processes           |
+| `Get-Command`     | Discover available commands                |
+| `Get-Help <cmd> -Online` | Open official help in browser     |
+| `ls`, `cp`, `mv`  | Aliases for common PowerShell cmdlets      |
+
