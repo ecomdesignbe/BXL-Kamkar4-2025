@@ -17,3 +17,128 @@ Then you could use environment variables, which are variables stored at the OS l
 - Write a small script reporting your computer specs and convert it in a csv file. You might have some trouble executing your script once saved. Why? How can you change it in a secure way?
 
 > **WARNING**: This exercise will **only work on windows** since it's specific to the way windows manages environment variables.
+
+# 🌍 PowerShell Environment Variables – Answers
+
+> ⚠️ WARNING: This exercise only works on **Windows** as it relies on how the OS manages environment variables.
+
+---
+
+## ✅ Open a PowerShell Terminal
+
+Done ✅
+
+---
+
+## ✅ Show your computer name
+
+```powershell
+echo $env:COMPUTERNAME
+```
+
+🖥️ Outputs the name of your computer.
+
+---
+
+## ✅ Create a variable
+
+```powershell
+$env:test = "hello powershell"
+```
+
+---
+
+## ✅ Check the variable
+
+```powershell
+echo $env:test
+```
+
+➡️ Output: `hello powershell`
+
+---
+
+## ✅ Append " Becode" to this variable
+
+```powershell
+$env:test += " Becode"
+```
+
+---
+
+## ✅ Check the updated variable
+
+```powershell
+echo $env:test
+```
+
+➡️ Output: `hello powershell Becode`
+
+---
+
+## ✅ `$env:PATH` variable explanation
+
+The `$env:PATH` environment variable stores locations that Windows checks when running a command, like `code` for VSCode.
+
+---
+
+## ✅ Add path to Rufus (or any executable copied to Desktop)
+
+Assuming you copied the executable to Desktop:
+
+```powershell
+$env:Path += ";C:\Users\<YourUsername>\Desktop"
+```
+
+📂 Replace `<YourUsername>` with your actual Windows user name.
+
+Now you can run `rufus` from any PowerShell location.
+
+---
+
+## ✅ List all recognized environment variables
+
+```powershell
+Get-ChildItem Env:
+```
+
+🧭 Displays all current environment variables.
+
+---
+
+## ✅ Write a script that reports computer specs and exports to CSV
+
+Create `report.ps1` with:
+
+```powershell
+$report = [PSCustomObject]@{
+    ComputerName = $env:COMPUTERNAME
+    Username     = $env:USERNAME
+    OS           = (Get-CimInstance Win32_OperatingSystem).Caption
+    CPU          = (Get-CimInstance Win32_Processor).Name
+    RAM_GB       = [math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory / 1GB, 2)
+}
+
+$report | Export-Csv -Path specs.csv -NoTypeInformation
+```
+
+---
+
+## ❓ Why might it fail to execute?
+
+By default, PowerShell **restricts script execution** for security reasons.
+
+You might get an error like:
+
+> `script.ps1 cannot be loaded because running scripts is disabled on this system.`
+
+✅ To fix this securely for your user only:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+---
+
+Let me know if you'd like to export this to a markdown file!
+
