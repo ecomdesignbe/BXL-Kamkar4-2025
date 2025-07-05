@@ -95,4 +95,3 @@ Get-Content secure.txt
 
 ---
 
-Let me know if you want this exported as a markdown file too!
