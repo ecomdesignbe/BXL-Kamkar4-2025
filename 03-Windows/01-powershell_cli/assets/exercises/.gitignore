@@ -1,0 +1,5 @@
+# Ignorer tous les fichiers .asc (ex : clés publiques exportées)
+*.asc
+
+# Ignorer tous les fichiers .txt (ex : fichiers en clair avec mots de passe)
+*.txt
