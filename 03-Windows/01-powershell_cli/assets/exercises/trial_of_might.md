@@ -9,68 +9,67 @@ Now that you gathered some basic understanding of the Powershell CLI, here is an
 - Encrypt the collected passwords with [GPG](https://medium.com/meetcyber/gpg-encryption-a-comprehensive-guide-to-securing-data-transfers-b66e784d7889), upload them on Github (link to be provided later) with a minimalist readme and send me your public key. 
 
 # 💻 PowerShell Trial Of Might – Answers
-- century0: ```century1```
-\
-- century1: ```10.0.14393.7870``` 
-- $PSVersionTable.BuildVersion
-\
-- century2: ```invoke-webrequest443``` 
+
+- century0: ```century1``` \
+- century1: ```10.0.14393.7870```  
+- $PSVersionTable.BuildVersion \
+
+- century2: ```invoke-webrequest443```  
 - Get-Command *request*
-- Get-ChildItem
-\
-- century3: ```123``` 
-- (Get-ChildItem | Where-Object { -not $_.PSIsContainer } | Measure-Object).Count
-\
-- century4: ```15768``` 
-- Get-ChildItem -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object -ExpandProperty Name
-\
-- century5: ```underthewire3347``` 
+- Get-ChildItem \
+
+- century3: ```123```  
+- (Get-ChildItem | Where-Object { -not $_.PSIsContainer } | Measure-Object).Count \
+
+- century4: ```15768```  
+- Get-ChildItem -Recurse | Where-Object { -not $_.PSIsContainer } | Select-Object -ExpandProperty Name \
+
+- century5: ```underthewire3347```  
 - (Get-ADDomain -Current LocalComputer).name
-- Get-ChildItem
-\
-- century6: ```197``` 
-- (Get-ChildItem).Count
-\
-- century7: ```7points```
+- Get-ChildItem \
+
+- century6: ```197```  
+- (Get-ChildItem).Count \
+
+- century7: ```7points```  
 - Get-ChildItem -Recurse
 - Get-Alias cat
-- Get-Content .\Readme.txt
-\
-- century8: ```696```
-- (Get-Content .\unique.txt | Get-Unique).count
-\
-- century9: ```pierid``` - ($words = (Get-Content Word_file.txt) -join " ") -split "\s+" | Select-Object -Index 160
+- Get-Content .\Readme.txt \
+
+- century8: ```696```  
+- (Get-Content .\unique.txt | Get-Unique).count \
+
+- century9: ```pierid```  
+- ($words = (Get-Content Word_file.txt) -join " ") -split "\s+" | Select-Object -Index 160
 - Get-ChildItem
 - Get-Content .\Word_File.txt
-- (Get-Content .\Word_File.txt) -split ' ' | Select-Object -Index 160
-\
-- century10: ```windowsupdates110```
+- (Get-Content .\Word_File.txt) -split ' ' | Select-Object -Index 160 \
+
+- century10: ```windowsupdates110```  
 - Get-Service wuauserv
 - Get-Service wuauserv | Select-Object *
 - $desc = (Get-WmiObject -Query "select * from win32_service where name = 'wuauserv'" | Select-Object *).Description
 - $desc -split ' ' | Select-Object -Index 9
 - $desc -split ' ' | Select-Object -Index 7
-- Get-ChildItem
-\
-- century11: ```secret_sauce```
-- Get-ChildItem -Force -Recurse -Hidden -ErrorAction SilentlyContinue 
-- Get-ChildItem -Recurse -Hidden -File -ErrorAction SilentlyContinue -Name Desktop, Documents, Downloads, Favorites, Music, Videos 
-\
-- century12: ```i_authenticate_things```
+- Get-ChildItem \
+
+- century11: ```secret_sauce```  
+- Get-ChildItem -Force -Recurse -Hidden -ErrorAction SilentlyContinue
+- Get-ChildItem -Recurse -Hidden -File -ErrorAction SilentlyContinue -Name Desktop, Documents, Downloads, Favorites, Music, Videos \
+
+- century12: ```i_authenticate_things```  
 - Get-ADDomainController
 - Get-ADComputer -Identity "UTW" -Properties Description
-- Get-ChildItem
-\
-- century13: ```755```
+- Get-ChildItem \
+
+- century13: ```755```  
 - Get-ChildItem
 - $words = (Get-Content .\countmywords) -split ' '
-- $words.count
-\
-- century14: ```153```
+- $words.count \
+
+- century14: ```153```  
 - Get-ChildItem
 - $words = (get-content .\countpolos) -split ' '
 - $words | select-string -Pattern 'polo'
 - $count = ($words | select-string -Pattern \bpolo\b).Count
 - $count
-
-
