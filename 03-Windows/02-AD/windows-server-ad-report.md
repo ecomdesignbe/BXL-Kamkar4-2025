@@ -1,4 +1,4 @@
-# 🧾 Client Report – Active Directory Infrastructure & Sysmon Monitoring
+# 🧾 Report – Active Directory Infrastructure & Sysmon Monitoring
 
 ## 📌 Overview
 
