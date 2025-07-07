@@ -70,6 +70,7 @@ Two users were created to simulate real-world access roles:
 
 ```powershell
 Sysmon64.exe -accepteula -i sysmonconfig-export.xml
+```
 
 
 ## Configuration file
