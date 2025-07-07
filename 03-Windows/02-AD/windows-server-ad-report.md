@@ -92,3 +92,10 @@ This project demonstrates the ability to:
 - Manage users and permissions using Active Directory  
 - Apply precise Group Policy Objects based on roles  
 - Monitor system activity effectively using Sysmon
+
+
+![IP Address assigned by DHCP](screenshots/ip-address-dhcp.png)
+
+![Sysmon Logs](screenshots/sysmon-logs.png)
+
+![Bob blocked cmd](screenshots/bob-blocked-cmd.png)
