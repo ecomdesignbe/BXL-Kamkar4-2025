@@ -1,6 +1,6 @@
 ## Cloud Network
 
-- Type of Challenge: Forencics
+- Type of Challenge: Learning
 - Duration: 2 days
 - Challenge type : Solo
 
